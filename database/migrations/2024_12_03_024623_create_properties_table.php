@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->integer('price');
+            $table->string('location');
+            $table->enum('type', ['casa', 'apartamento', 'terreno']);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

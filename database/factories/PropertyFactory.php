@@ -17,7 +17,12 @@ class PropertyFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => $this->faker->sentence(3),
+            'description' => $this->faker->paragraph(3),
+            'price' => $this->faker->numberBetween(10000, 100000),
+            'location' => $this->faker->city,
+            'type' => $this->faker->randomElement(['casa', 'apartamento', 'terreno']),
+            'is_active' => $this->faker->boolean(90),
         ];
     }
 }
